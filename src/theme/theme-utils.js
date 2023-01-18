@@ -1,14 +1,11 @@
 export const primaryFont = '"Poppins", sans-serif';
 
 export const typeScale = {
-  header1: "2.5rem",
-  header2: "1.75rem",
-  header3: "1.4rem",
-  header4: "1.2rem",
-  header5: "1.1rem",
-  paragraph: "1rem",
+  header1: "2rem",
+  header2: "1.4rem",
+  header3: "1rem",
+  paragraph: "0.9rem",
   helperText: "0.8rem",
-  copyrightText: "0.7rem",
   label: ".9rem",
   small: "0.9rem",
 };

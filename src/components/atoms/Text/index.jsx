@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import Styled, { css } from "styled-components";
-import { primaryFont, screen } from "../../../theme/theme-utils";
+import { primaryFont, screen, typeScale } from "../../../theme/theme-utils";
 
 const styles = css`
   font-family: ${primaryFont};
@@ -30,51 +30,32 @@ const StyledText = Styled.span`
 `;
 
 const StyledParagraph = Styled.p`
-    ${styles}
+  font-size: ${typeScale.paragraph};
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
+  ${styles}
 `;
 
 const StyledH1 = Styled.h1`
     ${styles}
-    font-size: ${({ fontSize }) => fontSize || "2em"};
+    font-size: ${({ fontSize }) => fontSize || typeScale.header1};
 `;
 
 const StyledH2 = Styled.h2`
     ${styles}
-    font-size: ${({ fontSize }) => fontSize || "1.5em"};
+    font-size: ${({ fontSize }) => fontSize || typeScale.header2};
 `;
 
 const StyledH3 = Styled.h3`
     ${styles}
-    font-size: ${({ fontSize }) => fontSize || "1.17em"};
+    font-size: ${({ fontSize }) => fontSize || typeScale.header3};
 `;
 
 export const FormTitle = Styled.h2`
   margin: 0 0 16px 0;
   font-weight: bold;
   font-size: 1.8rem;
-  ${styles}
-`;
-
-export const SubText = Styled.p`
-  margin: 0 0 16px 0;
-  font-size: 0.7rem;
-  line-height: 1.1rem;
-  width: 85%;
-  color:#757575;
-  ${styles}
-`;
-
-export const InputTitle = Styled.p`
-  /* font-size: 0.8rem; */
-  font-weight: ${({ fontWeight }) => fontWeight || "600"};
-  line-height: 1.1rem;
-  ${styles}
-`;
-
-export const InputSubTitle = Styled.p`
-  font-size: 0.7rem;
-  line-height: 1.1rem;
-  color:#757575;
   ${styles}
 `;
 

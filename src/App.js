@@ -1,19 +1,21 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
-import { Login, NotFound } from "./components";
-import { ErrorPage } from "./components/pages/ErrorPage";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Dashboard, ErrorPage, Login, NotFound } from "./components";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Login />} errorElement={<ErrorPage />}>
-      <Route exact path="*" element={<NotFound />} />
-    </Route>
-  )
-);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Login />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
+]);
 
 function App() {
   return <RouterProvider router={router} />;
