@@ -21,6 +21,26 @@ export const virtualAccounts = [
         amount: "Olaoluwa S.",
         date: "Today, 8mins ago",
       },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
     ],
   },
   {

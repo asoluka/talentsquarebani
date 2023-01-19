@@ -7,7 +7,8 @@ export const typeScale = {
   paragraph: "0.9rem",
   helperText: "0.8rem",
   label: ".9rem",
-  small: "0.9rem",
+  small: "0.7rem",
+  smaller: "0.6rem",
 };
 
 export const weightScale = {

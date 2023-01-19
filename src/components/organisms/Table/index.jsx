@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { typeScale } from "../../../theme";
 import { baniColors } from "../../../theme/colors";
-import { Flex } from "../../atoms";
 
 const Wrapper = styled.div`
   & table {
@@ -22,48 +21,30 @@ const Wrapper = styled.div`
   }
 
   & tr:not(:first-child):hover {
-    background-color: #d6eeee;
+    background-color: ${baniColors.background};
     cursor: pointer;
+    border-left: 3px solid ${baniColors.blue};
   }
 
   & td,
   th {
-    padding: 8px 24px;
+    padding: ${({ padding }) => padding || "8px 24px"};
+    font-size: ${({ small }) =>
+      small ? typeScale.small : typeScale.paragraph};
   }
 `;
-const Image = styled.img`
-  width: 35px;
-  height: 35px;
-  margin-right: 30px;
-`;
 
-export const Table = ({ data }) => {
+export const Table = ({ columnTitles, data, small, padding }) => {
   return (
-    <Wrapper>
+    <Wrapper small={small} padding={padding}>
       <table>
         <tr>
-          <th>Bank Name</th>
-          <th>Account Number</th>
-          <th></th>
-          <th>Total Inflow</th>
-          <th></th>
+          {columnTitles.map((title) => (
+            <th>{title}</th>
+          ))}
         </tr>
-        {data.map((item) => {
-          return (
-            <tr>
-              <td>
-                <Flex alignItems="center">
-                  <Image src={item.bankLogo} alt={item.bankName} />{" "}
-                  {item.bankName}
-                </Flex>
-              </td>
-              <td>{item.accountNumber} Icon</td>
-              <td>{item.linkedBranch}</td>
-              <td>{item.totalInflow}</td>
-              <td>.</td>
-            </tr>
-          );
-        })}
+
+        <>{data}</>
       </table>
     </Wrapper>
   );
