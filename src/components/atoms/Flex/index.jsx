@@ -25,6 +25,8 @@ export const Flex = styled.div`
   border-bottom: ${({ borderBottom }) => borderBottom};
   gap: ${({ gap }) => gap};
   color: ${({ color }) => color};
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  border-radius: ${({ borderRadius }) => borderRadius};
 `;
 
 export const FlexContainer = styled(Flex)`
@@ -48,6 +50,12 @@ Flex.propTypes = {
   width: PropTypes.string,
   margin: PropTypes.string,
   padding: PropTypes.string,
+  borderRight: PropTypes.string,
+  borderLeft: PropTypes.string,
+  borderTop: PropTypes.string,
+  borderBottom: PropTypes.string,
+  borderRadius: PropTypes.string,
+  backgroundColor: PropTypes.string,
 };
 
 Flex.defaultProps = {
