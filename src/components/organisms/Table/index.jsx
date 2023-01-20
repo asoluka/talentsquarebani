@@ -43,13 +43,17 @@ export const Table = ({ columnTitles, data, small, padding }) => {
   return (
     <Wrapper small={small} padding={padding}>
       <table>
-        <tr>
-          {columnTitles.map((title) => (
-            <th>{title}</th>
-          ))}
-        </tr>
+        <thead>
+          <tr>
+            {columnTitles.map((title, idx) => (
+              <th key={idx}>{title}</th>
+            ))}
+          </tr>
+        </thead>
 
-        <>{data}</>
+        <tbody>
+          <>{data}</>
+        </tbody>
       </table>
     </Wrapper>
   );

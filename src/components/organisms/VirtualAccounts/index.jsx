@@ -193,7 +193,7 @@ export const VirtualAccounts = ({ virtualAccounts, setActivityFieldData }) => {
             ]}
             data={virtualAccounts.map((item, idx) => {
               return (
-                <tr onClick={() => setActivityFieldData(idx)}>
+                <tr key={item.id} onClick={() => setActivityFieldData(idx)}>
                   <td>
                     <Flex alignItems="center">
                       <Image src={item.bankLogo} alt={item.bankName} />{" "}

@@ -59,7 +59,7 @@ export const Navbar = () => {
     <Wrapper>
       <Logo src={logoFile} alt="logo" />
       <Flex alignItems="center">
-        <NotificationWrapper>
+        <NotificationWrapper tabIndex="0">
           {newNotification && <NotificationSignal />}
           <NotificationIcon />
         </NotificationWrapper>
@@ -69,6 +69,7 @@ export const Navbar = () => {
           padding="4px 8px"
           alignItems="center"
           cursor="pointer"
+          tabIndex="0"
         >
           <Profile>JT</Profile>
           <div style={{ marginRight: "10px" }}>

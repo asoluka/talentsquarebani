@@ -217,9 +217,9 @@ export const DashboardActivityFeed = ({ activityField }) => {
           padding="10px 16px"
           small={true}
           columnTitles={["Transaction Details", "Amount", "Date", ""]}
-          data={activityField?.transactions.map((item) => {
+          data={activityField?.transactions.map((item, idx) => {
             return (
-              <tr>
+              <tr key={idx}>
                 <td>{item.transactionDetails}</td>
                 <td>{item.amount}</td>
                 <td>{item.date}</td>

@@ -53,11 +53,16 @@ export const DashboardSecondaryNav = () => {
       </Text>
 
       <SecondaryMenuLinkWrapper>
-        <SecondaryMenuLink margin="0 10px 0 0" color={baniColors.lightGrey}>
+        <SecondaryMenuLink
+          tabIndex="0"
+          margin="0 10px 0 0"
+          color={baniColors.lightGrey}
+        >
           <FormatSquareIcon />{" "}
           <Text margin="0 0 0 10px">Create New Branch</Text>
         </SecondaryMenuLink>
         <SecondaryMenuLink
+          tabIndex="0"
           backgroundColor={baniColors.blue}
           color={baniColors.white}
         >
