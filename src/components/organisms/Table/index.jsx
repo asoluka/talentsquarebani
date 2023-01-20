@@ -31,6 +31,7 @@ const Wrapper = styled.div`
     padding: ${({ padding }) => padding || "8px 24px"};
     font-size: ${({ small }) =>
       small ? typeScale.small : typeScale.paragraph};
+    white-space: nowrap;
   }
 `;
 

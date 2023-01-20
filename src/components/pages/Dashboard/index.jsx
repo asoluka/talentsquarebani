@@ -303,20 +303,31 @@ export const Dashboard = () => {
             padding="16px 24px"
           >
             <Flex alignItems="center">
-              <Text fontWeight="600" margin="0" fontSize={typeScale.paragraph}>
+              <Text
+                fontWeight="600"
+                margin="0"
+                fontSize={typeScale.paragraph}
+                whitespace="nowrap"
+              >
                 Activity Feed -
               </Text>
-              <Text margin="0" fontSize={typeScale.paragraph}>
+              <Text
+                margin="0"
+                fontSize={typeScale.paragraph}
+                whitespace="nowrap"
+              >
+                {"  "}
                 GT Bank
               </Text>
             </Flex>
 
             <Flex alignItems="center">
-              <Text margin="0" fontSize={typeScale.helperText}>
-                Active -
-              </Text>
-              <Text margin="0" fontSize={typeScale.helperText}>
-                Created 16 days ago
+              <Text
+                margin="0"
+                fontSize={typeScale.helperText}
+                whitespace="nowrap"
+              >
+                Active - Created 16 days ago
               </Text>
             </Flex>
           </Flex>
@@ -364,6 +375,7 @@ export const Dashboard = () => {
                 fontSize={typeScale.small}
                 color={baniColors.lightGrey}
                 margin="0 0 6px 0"
+                whitespace="nowrap"
               >
                 Total Inflow
               </Text>
@@ -372,6 +384,7 @@ export const Dashboard = () => {
                 fontWeight="600"
                 margin="0"
                 fontSize={typeScale.helperText}
+                whitespace="nowrap"
               >
                 ₦77,823.00
               </Text>
@@ -383,6 +396,7 @@ export const Dashboard = () => {
                 fontSize={typeScale.small}
                 color={baniColors.lightGrey}
                 margin="0 0 6px 0"
+                whitespace="nowrap"
               >
                 Last Activity Date
               </Text>
@@ -391,6 +405,7 @@ export const Dashboard = () => {
                 fontWeight="600"
                 margin="0"
                 fontSize={typeScale.helperText}
+                whitespace="nowrap"
               >
                 13th Sept. 2022
               </Text>
@@ -402,6 +417,7 @@ export const Dashboard = () => {
                 fontSize={typeScale.small}
                 color={baniColors.lightGrey}
                 margin="0 0 6px 0"
+                whitespace="nowrap"
               >
                 Linked Branch
               </Text>
@@ -412,6 +428,7 @@ export const Dashboard = () => {
                   fontWeight="600"
                   margin="0 0 0 10px"
                   fontSize={typeScale.small}
+                  whitespace="nowrap"
                 >
                   Dodo - Lekki II
                 </Text>

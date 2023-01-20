@@ -63,6 +63,7 @@ export const Navbar = () => {
               fontWeight="600"
               margin="0"
               fontSize={typeScale.small}
+              whitespace="nowrap"
             >
               JT Industry Limit..
             </Text>
