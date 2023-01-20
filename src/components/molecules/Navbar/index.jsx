@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { ArrowDownT2Icon, Flex, NotificationIcon, Text } from "../../atoms";
 import logoFile from "../../../assets/images/svg/logo.svg";
@@ -29,6 +29,7 @@ const Profile = styled.div`
   font-weight: 600;
 `;
 const NotificationWrapper = styled.div`
+  position: relative;
   background-color: ${baniColors.background};
   width: 30px;
   height: 30px;
@@ -40,13 +41,26 @@ const NotificationWrapper = styled.div`
   margin-right: 16px;
   cursor: pointer;
 `;
+const NotificationSignal = styled.div`
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: ${baniColors.blue};
+  top: 8px;
+  left: 15px;
+`;
 
 export const Navbar = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [newNotification, setNewNotification] = useState(true);
+
   return (
     <Wrapper>
       <Logo src={logoFile} alt="logo" />
       <Flex alignItems="center">
         <NotificationWrapper>
+          {newNotification && <NotificationSignal />}
           <NotificationIcon />
         </NotificationWrapper>
         <Flex

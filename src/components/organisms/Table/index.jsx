@@ -33,6 +33,10 @@ const Wrapper = styled.div`
       small ? typeScale.small : typeScale.paragraph};
     white-space: nowrap;
   }
+
+  & th {
+    font-weight: 400;
+  }
 `;
 
 export const Table = ({ columnTitles, data, small, padding }) => {

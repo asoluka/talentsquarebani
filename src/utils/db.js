@@ -14,6 +14,7 @@ export const virtualAccounts = [
     linkedBranch: "Ikeja",
     totalInflow: "NGN 100,000.00",
     lastActivityDate: "13th Sept. 2022",
+    createdAt: "13th Aug. 2021",
     linkedBranchStatus: "active",
     transactions: [
       {
@@ -50,10 +51,31 @@ export const virtualAccounts = [
     bankAbbreviation: "Gt-bank",
     accountNumber: "08023221144",
     linkedBranch: "Lekki II",
-    totalInflow: "NGN 100,000.00",
+    totalInflow: "NGN 77,000.00",
     lastActivityDate: "13th Sept. 2022",
-    linkedBranchStatus: "active",
+    linkedBranchStatus: "inactive",
+    createdAt: "13th Aug. 2021",
     transactions: [
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
       {
         transactionDetails: "Olaoluwa S.",
         amount: "Olaoluwa S.",
@@ -70,8 +92,29 @@ export const virtualAccounts = [
     linkedBranch: "Lekki II",
     totalInflow: "NGN 100,000.00",
     lastActivityDate: "13th Sept. 2022",
-    linkedBranchStatus: "active",
+    linkedBranchStatus: "inactive",
+    createdAt: "1 days ago",
     transactions: [
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
       {
         transactionDetails: "Olaoluwa S.",
         amount: "Olaoluwa S.",
@@ -88,8 +131,29 @@ export const virtualAccounts = [
     linkedBranch: "Abuja",
     totalInflow: "NGN 100,000.00",
     lastActivityDate: "13th Sept. 2022",
-    linkedBranchStatus: "active",
+    linkedBranchStatus: "dormant",
+    createdAt: "3 days ago",
     transactions: [
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
+      {
+        transactionDetails: "Olaoluwa S.",
+        amount: "Olaoluwa S.",
+        date: "Today, 8mins ago",
+      },
       {
         transactionDetails: "Olaoluwa S.",
         amount: "Olaoluwa S.",

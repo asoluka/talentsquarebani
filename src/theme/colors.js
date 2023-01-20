@@ -7,6 +7,7 @@ export const black = {
 };
 
 export const orange = {
+  50: "#FFF6EB",
   100: "#FFEDE3",
   200: "#EA8A15",
 };
@@ -14,6 +15,11 @@ export const orange = {
 export const blue = {
   100: "#5444F2",
   200: "#1A72F7",
+};
+
+export const purple = {
+  50: "#F2EBFF",
+  100: "#B01AF7",
 };
 
 export const grey = {
