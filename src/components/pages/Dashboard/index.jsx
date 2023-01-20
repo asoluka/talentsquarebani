@@ -2,10 +2,23 @@ import React from "react";
 import { DashboardTemplate } from "../../templates";
 import { Navbar, SideNav } from "../../molecules";
 import styled from "styled-components";
-import { Flex, Input, Text } from "../../atoms";
+import {
+  AddIcon,
+  ArrowDownT1Icon,
+  ArrowRightIcon,
+  CopyIcon,
+  Flex,
+  FormatSquareIcon,
+  Input,
+  MoreIcon,
+  OverviewIcon,
+  RowVerticalIcon,
+  SettingsT2Icon,
+  Text,
+} from "../../atoms";
 import { Link } from "react-router-dom";
 import { baniColors, orange } from "../../../theme/colors";
-import { typeScale } from "../../../theme";
+import { screen, typeScale } from "../../../theme";
 import { Table } from "../../organisms/Table";
 import { virtualAccounts } from "../../../utils/db";
 
@@ -20,6 +33,16 @@ const SecondaryMenuSection = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-x: auto;
+
+  @media only screen and (${screen.sm}) {
+    width: 100%;
+    padding: 30px;
+
+    & h3 {
+      margin-right: 30px;
+    }
+  }
 `;
 const SecondaryMenuLink = styled(Link)`
   background-color: ${({ backgroundColor }) =>
@@ -30,6 +53,9 @@ const SecondaryMenuLink = styled(Link)`
   font-size: 0.9rem;
   color: ${({ color }) => color};
   border: ${({ border }) => `1px solid ${border}`};
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
 `;
 const SecondaryMenuLinkWrapper = styled(Flex)`
   & a:not(:last-child) {
@@ -42,6 +68,11 @@ const BodySection = styled.section`
   padding: 0 24px 16px 24px;
   background: transparent;
   justify-content: space-between;
+
+  @media only screen and (${screen.sm}) {
+    display: block;
+    padding: 8px;
+  }
 `;
 const VirtualAccountListSection = styled.section`
   background-color: transparent;
@@ -51,6 +82,11 @@ const VirtualAccountListSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media only screen and (${screen.sm}) {
+    width: 100%;
+    margin-bottom: 50px;
+  }
 `;
 const VirtualAccountSummary = styled.section`
   background-color: ${baniColors.white};
@@ -61,6 +97,11 @@ const VirtualAccountSummary = styled.section`
   align-items: center;
   border-top: ${({ borderTop }) => `1px solid ${borderTop}`};
   border-bottom: ${({ borderBottom }) => `1px solid ${borderBottom}`};
+  overflow-x: auto;
+
+  @media only screen and (${screen.sm}) {
+    margin-bottom: 20px;
+  }
 `;
 const VirtualAccountsList = styled.section`
   background-color: ${baniColors.white};
@@ -72,24 +113,37 @@ const ActivityFeedSection = styled.section`
   width: 30%;
   height: 100%;
   border-radius: 8px;
+
+  @media only screen and (${screen.sm}) {
+    width: 100%;
+    margin-bottom: 50px;
+  }
 `;
 
 export const Dashboard = () => {
   return (
     <DashboardTemplate header={<Navbar />} sidebar={<SideNav />}>
       <SecondaryMenuSection>
-        <Text type="h3" lineHeight="35px" fontWeight="600" margin="0">
+        <Text
+          whitespace="nowrap"
+          type="h3"
+          lineHeight="35px"
+          fontWeight="600"
+          margin="0"
+        >
           Virtual Account Dashboard
         </Text>
 
         <SecondaryMenuLinkWrapper>
           <SecondaryMenuLink color={baniColors.lightGrey}>
-            Create New Branch
+            <FormatSquareIcon />{" "}
+            <Text margin="0 0 0 10px">Create New Branch</Text>
           </SecondaryMenuLink>
           <SecondaryMenuLink
             backgroundColor={baniColors.blue}
             color={baniColors.white}
           >
+            <AddIcon />
             Create Virtual Account
           </SecondaryMenuLink>
         </SecondaryMenuLinkWrapper>
@@ -104,10 +158,11 @@ export const Dashboard = () => {
                 fontSize={typeScale.helperText}
                 color={baniColors.lightGrey}
                 margin="0 0 6px 0"
+                whitespace="nowrap"
               >
                 Total Credits
               </Text>
-              <Text type="h3" fontWeight="600" margin="0">
+              <Text type="h3" fontWeight="600" margin="0" whitespace="nowrap">
                 NGN 3,287,902.00
               </Text>
             </div>
@@ -118,10 +173,11 @@ export const Dashboard = () => {
                 fontSize={typeScale.helperText}
                 color={baniColors.lightGrey}
                 margin="0 0 6px 0"
+                whitespace="nowrap"
               >
                 Total Transfer Settlememts
               </Text>
-              <Text type="h3" fontWeight="600" margin="0">
+              <Text type="h3" fontWeight="600" margin="0" whitespace="nowrap">
                 81 Settlement
               </Text>
             </div>
@@ -132,10 +188,11 @@ export const Dashboard = () => {
                 fontSize={typeScale.helperText}
                 color={baniColors.lightGrey}
                 margin="0 0 6px 0"
+                whitespace="nowrap"
               >
                 Generated Accounts
               </Text>
-              <Text type="h3" fontWeight="600" margin="0">
+              <Text type="h3" fontWeight="600" margin="0" whitespace="nowrap">
                 12 Accounts
               </Text>
             </div>
@@ -146,9 +203,13 @@ export const Dashboard = () => {
                 Your Virtual Accounts
               </Text>
 
-              <Flex>
-                <div style={{ marginRight: "16px" }}>Icon 1</div>
-                <div>Icon 2</div>
+              <Flex alignItems="center">
+                <div style={{ marginRight: "16px" }}>
+                  <OverviewIcon />
+                </div>
+                <div>
+                  <RowVerticalIcon />
+                </div>
               </Flex>
             </Flex>
 
@@ -187,11 +248,11 @@ export const Dashboard = () => {
 
               <Flex>
                 <div style={{ marginRight: "8px" }}>Manage</div>
-                <div>Icon</div>
+                <SettingsT2Icon />
               </Flex>
             </Flex>
 
-            <section>
+            <section style={{ overflowX: "auto" }}>
               <Table
                 columnTitles={[
                   "Bank Name",
@@ -209,10 +270,24 @@ export const Dashboard = () => {
                           {item.bankName}
                         </Flex>
                       </td>
-                      <td>{item.accountNumber} Icon</td>
-                      <td>{item.linkedBranch}</td>
+                      <td>
+                        <Flex alignItems="center">
+                          <Text margin="0 10px 0 0">{item.accountNumber}</Text>{" "}
+                          <CopyIcon />
+                        </Flex>
+                      </td>
+                      <td>
+                        <Flex alignItems="center">
+                          <FormatSquareIcon />
+                          <Text margin="0 0 0 10px" fontSize={typeScale.small}>
+                            Dodo - {item.linkedBranch}
+                          </Text>{" "}
+                        </Flex>
+                      </td>
                       <td>{item.totalInflow}</td>
-                      <td>.</td>
+                      <td>
+                        <MoreIcon />
+                      </td>
                     </tr>
                   );
                 })}
@@ -272,7 +347,8 @@ export const Dashboard = () => {
                 color={baniColors.lightGrey}
                 border={baniColors.border[50]}
               >
-                Create New Branch
+                <Text margin="0 10px 0 0">Go to Account View</Text>
+                <ArrowDownT1Icon />
               </SecondaryMenuLink>
             </Flex>
           </Flex>
@@ -329,14 +405,17 @@ export const Dashboard = () => {
               >
                 Linked Branch
               </Text>
-              <Text
-                type="p"
-                fontWeight="600"
-                margin="0"
-                fontSize={typeScale.helperText}
-              >
-                Dodo - Lekki II
-              </Text>
+              <Flex>
+                <FormatSquareIcon />
+                <Text
+                  type="p"
+                  fontWeight="600"
+                  margin="0 0 0 10px"
+                  fontSize={typeScale.small}
+                >
+                  Dodo - Lekki II
+                </Text>
+              </Flex>
             </div>
           </VirtualAccountSummary>
 
@@ -351,7 +430,9 @@ export const Dashboard = () => {
                     <td>{item.transactionDetails}</td>
                     <td>{item.amount}</td>
                     <td>{item.date}</td>
-                    <td>.</td>
+                    <td>
+                      <ArrowRightIcon />
+                    </td>
                   </tr>
                 );
               })}

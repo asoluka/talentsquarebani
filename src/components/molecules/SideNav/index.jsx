@@ -1,8 +1,23 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { baniColors } from "../../../theme/colors";
-import { typeScale } from "../../../theme";
-import { Flex, Text } from "../../atoms";
+import { screen, typeScale } from "../../../theme";
+import {
+  AuditLogs,
+  ComplianceIcon,
+  CustomersIcon,
+  EyeIcon,
+  Flex,
+  OrdersIcon,
+  OverviewIcon,
+  ProductsIcon,
+  SettingsT1Icon,
+  Text,
+  TransactionsIcon,
+  VirtualAccountsIcon,
+  WalletIcon,
+  WelcomeIcon,
+} from "../../atoms";
 
 const Wrapper = styled.nav`
   padding: 18px 24px;
@@ -16,15 +31,33 @@ const LinkItem = styled(Link)`
   text-decoration: none;
   font-size: ${typeScale.paragraph};
   display: block;
+  display: flex;
+  align-items: center;
 `;
 const TopLinks = styled.div`
   & div:not(:last-child) {
     padding-bottom: 16px;
   }
+
+  @media only screen and (${screen.sm}) {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    width: 100%;
+  }
 `;
 const BottomLinks = styled.div`
   & div:not(:last-child) {
-    padding-bottom: 16px;
+    padding: 16px 0;
+  }
+
+  @media only screen and (${screen.sm}) {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    width: 100%;
   }
 `;
 const LinkHeading = styled(Text)`
@@ -33,53 +66,99 @@ const LinkHeading = styled(Text)`
   padding: 6px 0 16px 0;
   margin: 0;
 `;
+const LinkTextWrapper = styled.span`
+  display: block;
+  margin-left: 10px;
+`;
 
 export const SideNav = () => {
   return (
     <Wrapper>
       <TopLinks>
-        <Flex>
-          <LinkItem>Welcome</LinkItem>
-        </Flex>
-        <Flex>
-          <LinkItem>Compliance</LinkItem>
-        </Flex>
-        <Flex>
-          <LinkItem>Overview</LinkItem>
-        </Flex>
+        <div>
+          <Flex>
+            <LinkItem>
+              <WelcomeIcon />
+              <LinkTextWrapper>Welcome</LinkTextWrapper>
+            </LinkItem>
+          </Flex>
+          <Flex>
+            <LinkItem>
+              <ComplianceIcon />
+              <LinkTextWrapper>Compliance</LinkTextWrapper>
+            </LinkItem>
+          </Flex>
+          <Flex>
+            <LinkItem>
+              <OverviewIcon />
+              <LinkTextWrapper>Overview</LinkTextWrapper>
+            </LinkItem>
+          </Flex>
+        </div>
 
-        <LinkHeading type="p">BUSINESS</LinkHeading>
-        <Flex>
-          <LinkItem>Products</LinkItem>
-        </Flex>
-        <Flex>
-          <LinkItem>Customers</LinkItem>
-        </Flex>
-        <Flex>
-          <LinkItem>Orders</LinkItem>
-        </Flex>
+        <div>
+          <LinkHeading type="p">BUSINESS</LinkHeading>
+          <Flex>
+            <LinkItem>
+              <ProductsIcon />
+              <LinkTextWrapper>Products</LinkTextWrapper>
+            </LinkItem>
+          </Flex>
+          <Flex>
+            <LinkItem>
+              <CustomersIcon />
+              <LinkTextWrapper>Customers</LinkTextWrapper>
+            </LinkItem>
+          </Flex>
+          <Flex>
+            <LinkItem>
+              <OrdersIcon />
+              <LinkTextWrapper>Orders</LinkTextWrapper>
+            </LinkItem>
+          </Flex>
+        </div>
 
-        <LinkHeading type="p">PAYMENTS</LinkHeading>
-        <Flex>
-          <LinkItem>Wallets</LinkItem>
-        </Flex>
-        <Flex>
-          <LinkItem>Transactions</LinkItem>
-        </Flex>
-        <Flex>
-          <LinkItem>Virtual Account</LinkItem>
-        </Flex>
+        <div>
+          <LinkHeading type="p">PAYMENTS</LinkHeading>
+          <Flex>
+            <LinkItem>
+              <WalletIcon />
+              <LinkTextWrapper>Wallets</LinkTextWrapper>
+            </LinkItem>
+          </Flex>
+          <Flex>
+            <LinkItem>
+              <TransactionsIcon />
+              <LinkTextWrapper>Transactions</LinkTextWrapper>
+            </LinkItem>
+          </Flex>
+          <Flex>
+            <LinkItem>
+              <VirtualAccountsIcon />
+              <LinkTextWrapper>Virtual Account</LinkTextWrapper>
+            </LinkItem>
+          </Flex>
+        </div>
       </TopLinks>
 
       <BottomLinks>
         <Flex>
-          <LinkItem>Live mode</LinkItem>
+          <LinkItem>
+            <EyeIcon />
+            <LinkTextWrapper>Live mode</LinkTextWrapper>
+          </LinkItem>
         </Flex>
         <Flex>
-          <LinkItem>Settings</LinkItem>
+          <LinkItem>
+            <SettingsT1Icon />
+            <LinkTextWrapper>Settings</LinkTextWrapper>
+          </LinkItem>
         </Flex>
         <Flex>
-          <LinkItem>Audit logs</LinkItem>
+          <LinkItem>
+            <AuditLogs />
+            <LinkTextWrapper>Audit logs</LinkTextWrapper>
+          </LinkItem>
         </Flex>
       </BottomLinks>
     </Wrapper>

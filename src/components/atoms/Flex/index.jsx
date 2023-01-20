@@ -27,6 +27,7 @@ export const Flex = styled.div`
   color: ${({ color }) => color};
   background-color: ${({ backgroundColor }) => backgroundColor};
   border-radius: ${({ borderRadius }) => borderRadius};
+  cursor: ${({ cursor }) => cursor};
 `;
 
 export const FlexContainer = styled(Flex)`
