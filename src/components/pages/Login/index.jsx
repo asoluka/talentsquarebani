@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { Flex, Input, Text } from "../../atoms";
+import { EyeIcon, Flex, Input, Text } from "../../atoms";
 import { baniColors } from "../../../theme/colors";
 import logoFile from "../../../assets/images/svg/logo.svg";
 import { screen, typeScale } from "../../../theme";
@@ -52,8 +52,16 @@ const SubmitBtn = styled(Link)`
   border-radius: 5px;
   text-decoration: none;
 `;
+const RevealIcon = styled(EyeIcon)`
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+`;
 
 export const Login = () => {
+  const [revealPassword, setRevealedPassword] = useState(false);
+
   return (
     <Wrapper>
       <Logo src={logoFile} alt="logo" />
@@ -94,7 +102,10 @@ export const Login = () => {
               Forgot Password
             </Text>
           </Flex>
-          <Input type="email" />
+          <Flex position="relative">
+            <RevealIcon onClick={() => setRevealedPassword(!revealPassword)} />
+            <Input type={revealPassword ? "text" : "password"} />
+          </Flex>
         </div>
 
         <SubmitBtn to="/dashboard">
