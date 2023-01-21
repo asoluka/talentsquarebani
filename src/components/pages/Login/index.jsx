@@ -66,11 +66,17 @@ export const Login = () => {
     <Wrapper>
       <Logo src={logoFile} alt="logo" />
       <FormWrapper>
-        <Text type="h2" lineHeight="35px" fontWeight="600" margin="0">
+        <Text
+          type="h2"
+          lineHeight="35px"
+          fontWeight="600"
+          margin="0"
+          whitespace="nowrap"
+        >
           Log in to your account
         </Text>
         <Flex>
-          <Text type="p" padding="0 10px 0 0">
+          <Text type="p" padding="0 10px 0 0" whitespace="nowrap">
             Don’t have an account?
           </Text>
           <Text type="p" color={baniColors.blue}>
@@ -87,11 +93,9 @@ export const Login = () => {
 
         <div style={{ margin: "16px 0" }}>
           <Flex justifyContent="space-between" color="#65717c" width="100%">
-            <label>
-              <Text type="p" margin="5px 0" fontSize={typeScale.label}>
-                Password
-              </Text>
-            </label>
+            <Text type="p" margin="5px 0" fontSize={typeScale.label}>
+              <label>Password</label>
+            </Text>
 
             <Text
               type="p"
