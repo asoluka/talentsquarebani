@@ -6,7 +6,7 @@ import {
   AuditLogs,
   ComplianceIcon,
   CustomersIcon,
-  EyeIcon,
+  LiveModeIcon,
   Flex,
   OrdersIcon,
   OverviewIcon,
@@ -163,7 +163,7 @@ export const SideNav = () => {
       <BottomLinks>
         <Flex>
           <LinkItem>
-            <EyeIcon />
+            <LiveModeIcon />
             <LinkTextWrapper>Live mode</LinkTextWrapper>
           </LinkItem>
         </Flex>

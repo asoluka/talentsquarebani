@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { Flex, Input, Text } from "../../atoms";
+import { EyeIcon, Flex, Input, Text } from "../../atoms";
 import { baniColors } from "../../../theme/colors";
 import logoFile from "../../../assets/images/svg/logo.svg";
 import { screen, typeScale } from "../../../theme";
@@ -52,17 +52,31 @@ const SubmitBtn = styled(Link)`
   border-radius: 5px;
   text-decoration: none;
 `;
+const RevealIcon = styled(EyeIcon)`
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+`;
 
 export const Login = () => {
+  const [revealPassword, setRevealedPassword] = useState(false);
+
   return (
     <Wrapper>
       <Logo src={logoFile} alt="logo" />
       <FormWrapper>
-        <Text type="h2" lineHeight="35px" fontWeight="600" margin="0">
+        <Text
+          type="h2"
+          lineHeight="35px"
+          fontWeight="600"
+          margin="0"
+          whitespace="nowrap"
+        >
           Log in to your account
         </Text>
         <Flex>
-          <Text type="p" padding="0 10px 0 0">
+          <Text type="p" padding="0 10px 0 0" whitespace="nowrap">
             Don’t have an account?
           </Text>
           <Text type="p" color={baniColors.blue}>
@@ -79,11 +93,9 @@ export const Login = () => {
 
         <div style={{ margin: "16px 0" }}>
           <Flex justifyContent="space-between" color="#65717c" width="100%">
-            <label>
-              <Text type="p" margin="5px 0" fontSize={typeScale.label}>
-                Password
-              </Text>
-            </label>
+            <Text type="p" margin="5px 0" fontSize={typeScale.label}>
+              <label>Password</label>
+            </Text>
 
             <Text
               type="p"
@@ -94,7 +106,10 @@ export const Login = () => {
               Forgot Password
             </Text>
           </Flex>
-          <Input type="email" />
+          <Flex position="relative">
+            <RevealIcon onClick={() => setRevealedPassword(!revealPassword)} />
+            <Input type={revealPassword ? "text" : "password"} />
+          </Flex>
         </div>
 
         <SubmitBtn to="/dashboard">
