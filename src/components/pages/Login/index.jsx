@@ -51,6 +51,7 @@ const SubmitBtn = styled(Link)`
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
+  text-align: center;
 `;
 const RevealIcon = styled(EyeIcon)`
   position: absolute;
